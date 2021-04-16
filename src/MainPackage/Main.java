@@ -10,7 +10,7 @@ public class Main {
 
         Start start = new Start();
         start.setBackground(new Color(220,227,238));
-
+        //TEST CZY MOGĘ WYSLAC
     }
 
 }
