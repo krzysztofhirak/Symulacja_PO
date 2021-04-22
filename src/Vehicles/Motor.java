@@ -2,16 +2,12 @@ package Vehicles;
 
 import java.awt.*;
 
-public class Motor extends Vehicles{
+public class Motor extends Vehicle {
 
     private final int MOTOR_SIZE = 6;
 
     public Motor(double[] position, double max_speed, int angle) {
-        super.position=position;
-        super.max_speed =max_speed;
-        super.angle_degree=angle;
-        angle_radian =Math.toRadians(angle_degree);
-        vector_direction=(angle_degree%180==0)?0:1;
+        super(position, max_speed, angle);
     }
 
     public void paintVehicle(Graphics vehicle_model){
