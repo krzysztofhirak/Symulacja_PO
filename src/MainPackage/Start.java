@@ -1,6 +1,7 @@
 package MainPackage;
 
 import Vehicles.Car;
+import Vehicles.Driver;
 import Vehicles.Motor;
 import Vehicles.SpawnPoint;
 
@@ -14,7 +15,7 @@ public class Start extends JPanel implements ActionListener {
 
     private final int FRAME_HEIGHT = 800;
     private final int FRAME_WIDTH = 1200;
-    private final int CAR_AMOUNT = 10;
+    private final int CAR_AMOUNT = 20;
     private final int MOTOR_AMOUNT = 10;
 
     double time = 0;
@@ -32,17 +33,11 @@ public class Start extends JPanel implements ActionListener {
 
         SpawnPoint.createVehicle(cars,motors,CAR_AMOUNT,MOTOR_AMOUNT);
 
-        Timer timer = new Timer(40,this);
+        Timer timer = new Timer(20,this);
         timer.restart();
 
         frame.add(this);
         frame.setVisible(true);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        repaint();
-        time++;
     }
 
     public void paint(Graphics window){
@@ -50,7 +45,6 @@ public class Start extends JPanel implements ActionListener {
         super.paintComponent(window);
 
         SpawnPoint.spawnVehicle(window,cars,motors,FRAME_WIDTH, FRAME_HEIGHT,CAR_AMOUNT,MOTOR_AMOUNT);
-
 
         window.setColor(Color.black);
         window.drawLine(FRAME_WIDTH-FRAME_WIDTH/3, 0, FRAME_WIDTH-FRAME_WIDTH/3, FRAME_HEIGHT);
@@ -61,5 +55,10 @@ public class Start extends JPanel implements ActionListener {
         window.drawString("Collisions: ", FRAME_WIDTH-FRAME_WIDTH/3+30, 45);
         }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
+        time++;
+    }
 
 }
