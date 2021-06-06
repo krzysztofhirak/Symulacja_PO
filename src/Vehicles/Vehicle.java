@@ -2,6 +2,8 @@ package Vehicles;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
+
 
 public abstract class Vehicle {
 
@@ -14,6 +16,8 @@ public abstract class Vehicle {
     protected int angle_degree;
     protected double angle_radian;
     private Driver driver;
+    private boolean turning;
+    Random rnd= new Random();
 
     public Vehicle(double[] position, double max_speed, int angle) {
         this.position=position;
@@ -47,12 +51,16 @@ public abstract class Vehicle {
 
     public void turnLeft(){
         vector_direction=(angle_degree%180==0)?1:0;
+        position[0] += 40*Math.cos(angle_radian);
+        position[1] += -40*Math.sin(angle_radian);
         angle_degree += 90;
         angle_radian =Math.toRadians(angle_degree);
     }
 
     public void turnRight(){
         vector_direction=(angle_degree%180==0)?1:0;
+        position[0] += 10*Math.cos(angle_radian);
+        position[1] += -10*Math.sin(angle_radian);
         angle_degree -= 90;
         angle_radian =Math.toRadians(angle_degree);
     }
@@ -63,10 +71,30 @@ public abstract class Vehicle {
         } else {
             accelerate();
         }
-        if(time%100==0){
-            turnRight();
-        }
-    }
+        if(driver.isOnIntersection(this.position) == false) {turning = false;}
+        if (turning == false && driver.isOnIntersection(this.position)){
+
+            int random = rnd.nextInt(3);
+            switch (random){
+            case 0: {
+                turnRight();
+                turning = true;
+                break;
+            }
+            case 1:{
+                turnLeft();
+                turning = true;
+                break;
+            }
+            case 2:{
+                break;
+            }}
+
+       // if(time%100==0) {
+      //      turnRight();
+      //  }
+
+    }}
 
     public void drive(int FRAME_WIDTH,int FRAME_HEIGHT){
 

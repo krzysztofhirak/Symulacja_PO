@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package MainPackage{
+
+class Main{
+    + Main()
+    + {static} main(String[]): void
+}
+
+class Start{
+    - FRAME_HIGHT: int
+    - FRAME_WIDTH: int
+    - CAR_AMOUNT: int
+    time: double
+
+    + Start()
+    + actionPerformed(ActionEvent): void
+    + paint(Graphics): void
+}
+}
+
+package Vehicles{
+class Car{
+    - FOV: int
+    - CAR_SIZE: int
+    - position: double[]
+    - vector_direction: int
+    - maxspeed: double
+    visibility: int
+    - speed: double
+    - time: int
+    - angle_degree: int
+    - angle_radian: double
+
+    + Car(double[],double,int)
+    + paint(Graphics): void
+    + paint_view(Graphics): void
+    + dont_paint_this_view(Graphics): void
+    + acceleration(): void
+    + realease(): void
+    + turn_left(): void
+    + turn_right(): void
+    + drive(int): void
+}
+
+class SpawnPoint{
+    + SpawnPoint()
+    + create_vehicle(ArrayList<Car>, int): void
+    + spawn_vehicle(Graphics, ArrayList<Car>, int): void
+}
+
+class Behaviour{
+    + Behaviour()
+    + {static} in_sight(Car): void
+}
+
+}
+
+    Car <-- Start
+    Car <.. SpawnPoint
+    Car <.. Behaviour
+    SpawnPoint <.. Start
+    Start <.. Main
+
+@enduml

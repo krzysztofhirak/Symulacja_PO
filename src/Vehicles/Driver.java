@@ -12,6 +12,7 @@ public class Driver {
     private int angle_case;
     private int entity;
 
+
     public Driver(double[] actual_position, int actual_angle_degree) {
         this.actual_position = actual_position;
         this.actual_angle_degree = actual_angle_degree;
@@ -90,4 +91,18 @@ public class Driver {
         return (entity > 0);
     }
 
-}
+    public boolean isOnIntersection(double[] this_vehicles_position){
+        int isOn=0;
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (
+                            (this_vehicles_position[0] < 130 + j * 200) &&
+                                    (this_vehicles_position[0] > 70 + j * 200) &&
+                                    (this_vehicles_position[1] > 70 + i * 200) &&
+                                    (this_vehicles_position[1] < 130 + i * 200)) {
+                        isOn++;
+                    }
+                }
+            }
+        return (isOn > 0);
+    }}

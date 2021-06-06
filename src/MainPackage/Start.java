@@ -1,5 +1,6 @@
 package MainPackage;
 
+import Environment.Board;
 import Vehicles.Car;
 import Vehicles.Driver;
 import Vehicles.Motor;
@@ -15,21 +16,22 @@ public class Start extends JPanel implements ActionListener {
 
     private final int FRAME_HEIGHT = 800;
     private final int FRAME_WIDTH = 1200;
-    private final int CAR_AMOUNT = 20;
-    private final int MOTOR_AMOUNT = 10;
+    private final int CAR_AMOUNT = 1;
+    private final int MOTOR_AMOUNT = 0;
 
     double time = 0;
 
     ArrayList<Car> cars = new ArrayList<>();
     ArrayList<Motor> motors = new ArrayList<>();
 
-    public Start() {
+    public Start(){
 
         JFrame frame = new JFrame("Symulacja");
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBackground(Color.cyan);
         frame.setResizable(false);
+
 
         SpawnPoint.createVehicle(cars,motors,CAR_AMOUNT,MOTOR_AMOUNT);
 
@@ -45,7 +47,8 @@ public class Start extends JPanel implements ActionListener {
         super.paintComponent(window);
 
         SpawnPoint.spawnVehicle(window,cars,motors,FRAME_WIDTH, FRAME_HEIGHT,CAR_AMOUNT,MOTOR_AMOUNT);
-
+        Board.paintRoad(window);
+        Board.paintIntersection(window);
         window.setColor(Color.black);
         window.drawLine(FRAME_WIDTH-FRAME_WIDTH/3, 0, FRAME_WIDTH-FRAME_WIDTH/3, FRAME_HEIGHT);
         window.setColor(new Color(200, 207, 218));
@@ -53,6 +56,7 @@ public class Start extends JPanel implements ActionListener {
         window.setColor(Color.black);
         window.drawString("Cars: "+   "   Time: " + time , FRAME_WIDTH-FRAME_WIDTH/3+30, 30);
         window.drawString("Collisions: ", FRAME_WIDTH-FRAME_WIDTH/3+30, 45);
+
         }
 
     @Override
