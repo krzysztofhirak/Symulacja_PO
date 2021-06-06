@@ -87,6 +87,7 @@ public abstract class Vehicle {
                 break;
             }
             case 2:{
+                turning = true;
                 break;
             }}
 
