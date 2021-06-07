@@ -10,12 +10,12 @@ public class SpawnPoint {
 
     public static void createVehicle(ArrayList<Car> car, ArrayList<Motor> motor, int car_amount, int motor_amount){
         for(int i=0;i<car_amount;i++){
-            double[] start_point = {290,90};
+            double[] start_point = {290,790};
             car.add(new Car(start_point,Math.random()*4+3,(90)));
         }
         for(int i=0;i<motor_amount;i++){
-            double[] start_point = {Math.random()*400,Math.random()*400};
-            motor.add(new Motor(start_point,(Math.random()*4+3),(int)(Math.random()*4)*90));
+            double[] start_point = {10, 290};
+            motor.add(new Motor(start_point,(Math.random()*4+3),(0)));
         }
     }
 
@@ -25,6 +25,8 @@ public class SpawnPoint {
             car_model.paintVehicle(window);
             car_model.drive(car,motor,CAR_AMOUNT,MOTOR_AMOUNT);
             car_model.drive(FRAME_WIDTH,FRAME_HEIGHT);
+
+
         }
 
         for (Motor motor_model: motor) {

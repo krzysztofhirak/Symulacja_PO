@@ -24,13 +24,13 @@ public class Driver {
     }
 
     public void paintView(Graphics field_of_view) {
-        field_of_view.setColor(new Color(255, 0, 0, 0));
+        field_of_view.setColor(new Color(255, 162, 0, 86));
         field_of_view.drawArc((int) actual_position[0] - (FOV / 2), (int) actual_position[1] - FOV / 2, FOV, FOV, (actual_angle_degree + 30) % 360, -60);
         field_of_view.fillArc((int) actual_position[0] - (FOV / 2), (int) actual_position[1] - FOV / 2, FOV, FOV, (actual_angle_degree + 30) % 360, -60);
     }
 
     public void dontPaintThisView(Graphics front_filed_of_view) {
-        front_filed_of_view.setColor(new Color(169, 241, 154, 169));
+        front_filed_of_view.setColor(new Color(169, 241, 154, 0));
         switch (actual_angle_degree % 360) {
             case 0 -> {
                 front_filed_of_view.fillRect((int) (actual_position[0]), (int) (actual_position[1] - FOV / 8), FOV / 2, FOV / 4);
