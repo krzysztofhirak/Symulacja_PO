@@ -16,8 +16,8 @@ public class Start extends JPanel implements ActionListener {
 
     private final int FRAME_HEIGHT = 800;
     private final int FRAME_WIDTH = 1200;
-    private int CAR_AMOUNT = 20;
-    private int MOTOR_AMOUNT = 10;
+    private int CAR_AMOUNT = 10;
+    private int MOTOR_AMOUNT = 5;
     public double max_speed = 0;
     double time = 0;
 
