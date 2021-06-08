@@ -63,7 +63,9 @@ public class Start extends JPanel implements ActionListener {
         paintButtons(window);
         paintSimulation(window);
 
-        Vehicle.saveToCSV(cars, motors, time, CAR_AMOUNT, MOTOR_AMOUNT);
+        if(time % 58 == 0){
+            Vehicle.saveToCSV(cars, motors, time, CAR_AMOUNT, MOTOR_AMOUNT);
+        }
 
         time++;
     }

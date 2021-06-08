@@ -24,7 +24,7 @@ public abstract class Vehicle {
     private final Driver driver;
     private boolean turning;
     Random rnd= new Random();
-    static String filepath = "dane.txt";
+    static String filepath = "dane.csv";
 
     public Vehicle(double[] position, double max_speed, int angle) {
         this.position=position;
@@ -33,11 +33,6 @@ public abstract class Vehicle {
         angle_radian =Math.toRadians(angle_degree);
         vector_direction=(angle_degree%180==0)?0:1;
         this.driver = new Driver(position,angle);
-//        if(time % 1 == 0){
-//            saveToCSV();
-//            System.out.println("Działa(?)");
-//        }
-        System.out.println(time);
     }
 
     public void paintView(Graphics window){
@@ -54,22 +49,16 @@ public abstract class Vehicle {
     }
 
     public void accelerate(){
-//        if(speed < max_speed*(Math.cos(angle_radian)-Math.sin(angle_radian))){
-//            speed = speed * 1.1;
-//        }
-//        else{
-            speed = max_speed*(Math.cos(angle_radian)-Math.sin(angle_radian));
-//        }
+        speed = (Math.abs(speed)+0.05*max_speed*(1-(Math.abs(speed)/max_speed)))*(Math.cos(angle_radian)-Math.sin(angle_radian));
     }
 
     public void slowDown(){
         if(speed > 0.1){
-            speed = speed/1.3;
+            speed = speed/1.2;
         }
         else{
             speed = 0;
         }
-
     }
 
     public void turnLeft(){
@@ -145,12 +134,12 @@ public abstract class Vehicle {
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             PrintWriter printWriter = new PrintWriter(bufferedWriter);
 
-            printWriter.println(Vehicle.time /1000+"s:");
+            printWriter.println(time/1000+"s:;Vehicle;x;y");
             for(int i = 0; i < CAR_AMOUNT; i++){
-                printWriter.println(String.format("   Car %d:\n      x:%.3f\n      y:%.3f",i, cars.get(i).position[0],cars.get(i).position[1]));
+                printWriter.println(String.format(";Car %d;%.3f;%.3f",i, cars.get(i).position[0],cars.get(i).position[1]));
             }
             for(int i = 0; i < MOTOR_AMOUNT; i++){
-                printWriter.println(String.format("   Motor %d:\n      x:%.3f\n      y:%.3f",i, motors.get(i).position[0],motors.get(i).position[1]));
+                printWriter.println(String.format(";Motor %d;%.3f;%.3f",i, motors.get(i).position[0],motors.get(i).position[1]));
             }
             printWriter.println("");
 
