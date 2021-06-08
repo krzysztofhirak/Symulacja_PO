@@ -46,7 +46,13 @@ public abstract class Vehicle {
     }
 
     public void slowDown(){
-        speed =0;
+        if(speed > 0.1){
+            speed = speed/1.3;
+        }
+        else{
+            speed = 0;
+        }
+
     }
 
     public void turnLeft(){

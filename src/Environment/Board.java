@@ -1,6 +1,8 @@
 package Environment;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Board {
 
@@ -26,8 +28,31 @@ intersection.setColor(new Color(0x6876762A, true));
 
  }
 
+    public static void spawnLights(){
 
+    }
 
+    public static void paintLights(Graphics lights, double time){
+//        Timer timer = new Timer(17, (ActionListener) this);
+//        timer.restart();
 
+        if(time % 500 < 200){
+            lights.setColor(Color.RED);
+        }
+        else if(time % 500 < 250){
+            lights.setColor(Color.YELLOW);
+        }
+        else if(time % 500 < 450){
+            lights.setColor(Color.GREEN);
+        }
+        else{
+            lights.setColor(Color.YELLOW);
+        }
+
+        lights.fillOval(290,290,20,20);
+        lights.fillOval(690,490,20,20);
+        lights.fillOval(490,90,20,20);
+        lights.fillOval(90,690,20,20);
+    }
 
 }

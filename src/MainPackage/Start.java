@@ -72,6 +72,7 @@ public class Start extends JPanel implements ActionListener {
 
         Board.paintRoad(g);
         Board.paintIntersection(g);
+        Board.paintLights(g, time);
 
         g.setColor(Color.black);
         g.drawLine(FRAME_WIDTH - FRAME_WIDTH / 3, 0, FRAME_WIDTH - FRAME_WIDTH / 3, FRAME_HEIGHT);
