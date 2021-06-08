@@ -1,6 +1,12 @@
 package Vehicles;
 
+import Environment.Board;
+
+import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -12,12 +18,13 @@ public abstract class Vehicle {
     protected double max_speed;
     //int visibility = 3;//na razie tu potem do kalsy mapa
     private double speed = 0;
-    private int time =1;
+    private static int time = 1;
     protected int angle_degree;
     protected double angle_radian;
     private Driver driver;
     private boolean turning;
     Random rnd= new Random();
+    static String filepath = "dane.txt";
 
     public Vehicle(double[] position, double max_speed, int angle) {
         this.position=position;
@@ -26,6 +33,11 @@ public abstract class Vehicle {
         angle_radian =Math.toRadians(angle_degree);
         vector_direction=(angle_degree%180==0)?0:1;
         this.driver = new Driver(position,angle);
+//        if(time % 1 == 0){
+//            saveToCSV();
+//            System.out.println("Działa(?)");
+//        }
+        System.out.println(time);
     }
 
     public void paintView(Graphics window){
@@ -42,7 +54,12 @@ public abstract class Vehicle {
     }
 
     public void accelerate(){
-        speed = max_speed*(Math.cos(angle_radian)-Math.sin(angle_radian));
+//        if(speed < max_speed*(Math.cos(angle_radian)-Math.sin(angle_radian))){
+//            speed = speed * 1.1;
+//        }
+//        else{
+            speed = max_speed*(Math.cos(angle_radian)-Math.sin(angle_radian));
+//        }
     }
 
     public void slowDown(){
@@ -77,8 +94,8 @@ public abstract class Vehicle {
         } else {
             accelerate();
         }
-        if(driver.isOnIntersection(this.position) == false) {turning = false;}
-        if (turning == false && driver.isOnIntersection(this.position)){
+        if(!driver.isOnIntersection(this.position)) {turning = false;}
+        if (!turning && driver.isOnIntersection(this.position)){
 
             int random = rnd.nextInt(3);
             switch (random){
@@ -97,9 +114,9 @@ public abstract class Vehicle {
                 break;
             }}
 
-       // if(time%100==0) {
-      //      turnRight();
-      //  }
+        if(time % 5000 == 0) {
+            turnRight();
+        }
 
     }}
 
@@ -120,5 +137,32 @@ public abstract class Vehicle {
         return speed;
     }
     public void setMaxSpeed(double maxSpeed){ this.max_speed = maxSpeed; }
+
+//    public static void dataToSave(){
+//        String filepath = "";
+//    }
+
+    public static void saveToCSV(ArrayList<Car> cars, ArrayList<Motor> motors, double t, int CAR_AMOUNT, double MOTOR_AMOUNT){
+        try{
+            FileWriter fileWriter = new FileWriter(filepath, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            PrintWriter printWriter = new PrintWriter(bufferedWriter);
+
+            printWriter.println(Vehicle.time /1000+"s:");
+            for(int i = 0; i < CAR_AMOUNT; i++){
+                printWriter.println(String.format("   Car %d:\n      x:%.3f\n      y:%.3f",i, cars.get(i).position[0],cars.get(i).position[1]));
+            }
+            for(int i = 0; i < MOTOR_AMOUNT; i++){
+                printWriter.println(String.format("   Motor %d:\n      x:%.3f\n      y:%.3f",i, motors.get(i).position[0],motors.get(i).position[1]));
+            }
+            printWriter.println("");
+
+            printWriter.flush();
+            printWriter.close();
+        }
+        catch(Exception E){
+            JOptionPane.showMessageDialog(null, "Nie zapisują się dane :c");
+        }
+    }
 
 }

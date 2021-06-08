@@ -95,11 +95,11 @@ public class Driver {
         int isOn=0;
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
-                    if (
-                            (this_vehicles_position[0] < 130 + j * 200) &&
-                                    (this_vehicles_position[0] > 70 + j * 200) &&
-                                    (this_vehicles_position[1] > 70 + i * 200) &&
-                                    (this_vehicles_position[1] < 130 + i * 200)) {
+                    if (    (this_vehicles_position[0] < 130 + j * 200) &&
+                            (this_vehicles_position[0] > 70 + j * 200) &&
+                            (this_vehicles_position[1] > 70 + i * 200) &&
+                            (this_vehicles_position[1] < 130 + i * 200))
+                    {
                         isOn++;
                     }
                 }

@@ -4,6 +4,7 @@ import Environment.Board;
 import Vehicles.Car;
 import Vehicles.Motor;
 import Vehicles.SpawnPoint;
+import Vehicles.Vehicle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,8 +25,7 @@ public class Start extends JPanel implements ActionListener {
     ArrayList<Motor> motors = new ArrayList<>();
 
     JFrame frame = new JFrame("Symulacja");
-    //    JTextField car_max_speed = new JTextField();
-//    JTextField motor_max_speed = new JTextField();
+
     JTextField carAmount = new JTextField();
     JButton buttonSlow = new JButton("Slow");
     JButton buttonMedium = new JButton("Medium");
@@ -49,6 +49,7 @@ public class Start extends JPanel implements ActionListener {
 
         frame.add(this);
         frame.setVisible(true);
+
     }
 
     public void paint(Graphics window) {
@@ -61,6 +62,8 @@ public class Start extends JPanel implements ActionListener {
 
         paintButtons(window);
         paintSimulation(window);
+
+        Vehicle.saveToCSV(cars, motors, time, CAR_AMOUNT, MOTOR_AMOUNT);
 
         time++;
     }
@@ -86,16 +89,6 @@ public class Start extends JPanel implements ActionListener {
 
     public void paintButtons(Graphics h){
 //        panel.paint(h);
-
-//        this.add(car_max_speed);
-//        car_max_speed.setBounds(820, 70, 50, 25);
-//        car_max_speed.addActionListener(this);
-//        car_max_speed.setVisible(true);
-//
-//        motor_max_speed.setBounds(820, 100, 50, 25);
-//        this.add(motor_max_speed);
-//        motor_max_speed.addActionListener(this);
-//        motor_max_speed.setVisible(true);
 
         buttonSlow.setBounds(820,130,90,25);
         panel.add(buttonSlow);
@@ -148,22 +141,6 @@ public class Start extends JPanel implements ActionListener {
                 motors.get(i).setMaxSpeed(6);
             }
         }
-
-//        if(e.getSource()== car_max_speed){
-//            CarSpeedInput = car_max_speed.getText();
-//            int SpeedInputNumber=Integer.parseInt(CarSpeedInput);
-//            for(int i = 0; i < CAR_AMOUNT; i++){
-//                cars.get(i).setMaxSpeed(SpeedInputNumber);
-//            }
-//            max_speed = SpeedInputNumber;
-//        }
-//        if(e.getSource()== motor_max_speed){
-//            MotorSpeedInput = motor_max_speed.getText();
-//            int SpeedInputNumber=Integer.parseInt(MotorSpeedInput);
-//            for(int i = 0; i < MOTOR_AMOUNT; i++){
-//                motors.get(i).setMaxSpeed(SpeedInputNumber);
-//            }
-//        }
 
         if(e.getSource()== carAmount){
             carAmountInput = carAmount.getText();

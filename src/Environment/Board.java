@@ -17,15 +17,13 @@ public class Board {
         }
     }
 
- public static void paintIntersection(Graphics intersection){
-intersection.setColor(new Color(0x6876762A, true));
-
-     for(int i=0; i<4; i++){
-         for(int j=0; j<4; j++){
-             intersection.fillRect(70+i*200, 70+j*200, 60, 60);
-         }
-     }
-
+    public static void paintIntersection(Graphics intersection){
+        intersection.setColor(new Color(0x6876762A, true));
+        for(int i=0; i<4; i++){
+            for(int j=0; j<4; j++) {
+                intersection.fillRect(70 + i * 200, 70 + j * 200, 60, 60);
+            }
+        }
  }
 
     public static void spawnLights(){
@@ -36,17 +34,17 @@ intersection.setColor(new Color(0x6876762A, true));
 //        Timer timer = new Timer(17, (ActionListener) this);
 //        timer.restart();
 
-        if(time % 500 < 200){
+        if(time % 600 < 200){
             lights.setColor(Color.RED);
+//            daWey = 1;
         }
-        else if(time % 500 < 250){
+        else if(time % 600 < 400){
             lights.setColor(Color.YELLOW);
+//            daWey = 2;
         }
-        else if(time % 500 < 450){
+        else {
             lights.setColor(Color.GREEN);
-        }
-        else{
-            lights.setColor(Color.YELLOW);
+//            daWey = 3;
         }
 
         lights.fillOval(290,290,20,20);
