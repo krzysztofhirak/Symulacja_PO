@@ -110,6 +110,9 @@ public abstract class Vehicle {
         time++;
     }
 
-
+    public double getMaxSpeed(){
+        return speed;
+    }
+    public void setMaxSpeed(double maxSpeed){ this.max_speed = maxSpeed; }
 
 }
