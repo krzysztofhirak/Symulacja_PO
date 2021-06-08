@@ -26,31 +26,27 @@ public class Board {
         }
  }
 
-    public static void spawnLights(){
-
-    }
-
-    public static void paintLights(Graphics lights, double time){
-//        Timer timer = new Timer(17, (ActionListener) this);
-//        timer.restart();
-
-        if(time % 600 < 200){
-            lights.setColor(Color.RED);
-//            daWey = 1;
-        }
-        else if(time % 600 < 400){
-            lights.setColor(Color.YELLOW);
-//            daWey = 2;
-        }
-        else {
-            lights.setColor(Color.GREEN);
-//            daWey = 3;
-        }
-
-        lights.fillOval(290,290,20,20);
-        lights.fillOval(690,490,20,20);
-        lights.fillOval(490,90,20,20);
-        lights.fillOval(90,690,20,20);
-    }
+//    public static void paintLights(Graphics lights, double time){
+////        Timer timer = new Timer(17, (ActionListener) this);
+////        timer.restart();
+//
+//        if(time % 600 < 200){
+//            lights.setColor(Color.RED);
+////            daWey = 1;
+//        }
+//        else if(time % 600 < 400){
+//            lights.setColor(Color.YELLOW);
+////            daWey = 2;
+//        }
+//        else {
+//            lights.setColor(Color.GREEN);
+////            daWey = 3;
+//        }
+//
+//        lights.fillOval(290,290,20,20);
+//        lights.fillOval(690,490,20,20);
+//        lights.fillOval(490,90,20,20);
+//        lights.fillOval(90,690,20,20);
+//    }
 
 }

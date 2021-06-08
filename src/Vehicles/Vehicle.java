@@ -1,6 +1,6 @@
 package Vehicles;
 
-import Environment.Board;
+//import Environment.Board;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +21,7 @@ public abstract class Vehicle {
     private static int time = 1;
     protected int angle_degree;
     protected double angle_radian;
-    private Driver driver;
+    private final Driver driver;
     private boolean turning;
     Random rnd= new Random();
     static String filepath = "dane.txt";
@@ -133,9 +133,6 @@ public abstract class Vehicle {
         time++;
     }
 
-    public double getMaxSpeed(){
-        return speed;
-    }
     public void setMaxSpeed(double maxSpeed){ this.max_speed = maxSpeed; }
 
 //    public static void dataToSave(){

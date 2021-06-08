@@ -16,8 +16,8 @@ public class Start extends JPanel implements ActionListener {
 
     private final int FRAME_HEIGHT = 800;
     private final int FRAME_WIDTH = 1200;
-    private int CAR_AMOUNT = 10;
-    private int MOTOR_AMOUNT = 5;
+    private final int CAR_AMOUNT = 10;
+    private final int MOTOR_AMOUNT = 5;
     public double max_speed = 0;
     double time = 0;
 
@@ -31,9 +31,9 @@ public class Start extends JPanel implements ActionListener {
     JButton buttonMedium = new JButton("Medium");
     JButton buttonFast = new JButton("Fast");
 
-    JPanel panel = new JPanel();
+//    JPanel panel = new JPanel();
 
-    String carAmountInput = "";
+//    String carAmountInput = "";
 
     public Start() {
 
@@ -54,11 +54,11 @@ public class Start extends JPanel implements ActionListener {
 
     public void paint(Graphics window) {
 
-        panel.setBounds(100, 100, 1000, 1000);
-        panel.setBackground(new Color(210, 217, 228));
-        panel.setBorder(null);
-        panel.setVisible(true);
-        frame.add(panel);
+//        frame.setBounds(100, 100, 1000, 1000);
+//        panel.setBackground(new Color(210, 217, 228));
+//        panel.setBorder(null);
+//        panel.setVisible(true);
+//        frame.add(panel);
 
         paintButtons(window);
         paintSimulation(window);
@@ -75,7 +75,7 @@ public class Start extends JPanel implements ActionListener {
 
         Board.paintRoad(g);
         Board.paintIntersection(g);
-        Board.paintLights(g, time);
+//        Board.paintLights(g, time);
 
         g.setColor(Color.black);
         g.drawLine(FRAME_WIDTH - FRAME_WIDTH / 3, 0, FRAME_WIDTH - FRAME_WIDTH / 3, FRAME_HEIGHT);
@@ -91,7 +91,7 @@ public class Start extends JPanel implements ActionListener {
 //        panel.paint(h);
 
         buttonSlow.setBounds(820,130,90,25);
-        panel.add(buttonSlow);
+        this.add(buttonSlow);
         buttonSlow.addActionListener(this);
         buttonSlow.setVisible(true);
 
@@ -142,14 +142,14 @@ public class Start extends JPanel implements ActionListener {
             }
         }
 
-        if(e.getSource()== carAmount){
-            carAmountInput = carAmount.getText();
-            int carInputNumber=Integer.parseInt(carAmountInput);
-//            for(int i=0;i<carInputNumber;i++){
-//                double[] start_point = {290,790};
-//                cars.add(new Car(start_point,Math.random()*4+3,(90)));
-//            }
-        }
+//        if(e.getSource()== carAmount){
+//            carAmountInput = carAmount.getText();
+//            int carInputNumber=Integer.parseInt(carAmountInput);
+////            for(int i=0;i<carInputNumber;i++){
+////                double[] start_point = {290,790};
+////                cars.add(new Car(start_point,Math.random()*4+3,(90)));
+////            }
+//        }
     }
 
 }
