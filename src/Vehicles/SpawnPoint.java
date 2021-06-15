@@ -35,7 +35,5 @@ public class SpawnPoint {
             motor_model.drive(car,motor,CAR_AMOUNT,MOTOR_AMOUNT);
             motor_model.drive(FRAME_WIDTH,FRAME_HEIGHT);
         }
-
     }
-
 }

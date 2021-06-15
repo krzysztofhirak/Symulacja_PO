@@ -16,7 +16,6 @@ public abstract class Vehicle {
     protected double[] position;
     protected int vector_direction;
     protected double max_speed;
-    //int visibility = 3;//na razie tu potem do kalsy mapa
     private double speed = 0;
     private static int time = 1;
     protected int angle_degree;
@@ -106,7 +105,6 @@ public abstract class Vehicle {
         if(time % 5000 == 0) {
             turnRight();
         }
-
     }}
 
     public void drive(int FRAME_WIDTH,int FRAME_HEIGHT){
@@ -123,10 +121,6 @@ public abstract class Vehicle {
     }
 
     public void setMaxSpeed(double maxSpeed){ this.max_speed = maxSpeed; }
-
-//    public static void dataToSave(){
-//        String filepath = "";
-//    }
 
     public static void saveToCSV(ArrayList<Car> cars, ArrayList<Motor> motors, double t, int CAR_AMOUNT, double MOTOR_AMOUNT){
         try{
@@ -150,5 +144,4 @@ public abstract class Vehicle {
             JOptionPane.showMessageDialog(null, "Nie zapisują się dane :c");
         }
     }
-
 }

@@ -10,15 +10,12 @@ public class Buttons extends JPanel implements ActionListener {
     public Buttons(){
         JLabel label = new JLabel("Jakiś tekst");
         label.setBounds(820, 130, 160,25);
-//        Start.add(label);
 
         JTextField textfield = new JTextField();
         textfield.setBounds(820, 70, 160, 25);
-//        Start.add(textfield);
 
         JButton button = new JButton("Apply");
         button.setBounds(820,100,80,25);
-//        Start.add(button);
     }
 
     public void paint(Graphics buttons) {
@@ -41,9 +38,6 @@ public class Buttons extends JPanel implements ActionListener {
         button.setVisible(true);
 
         buttons.drawString("SAMPLE TEXT", 50,50);
-
-//        button1(buttons);
-
     }
 
     public void button1(Graphics buttons){

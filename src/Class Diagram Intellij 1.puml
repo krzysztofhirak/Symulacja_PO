@@ -44,6 +44,10 @@ class Car{
     + drive(int): void
 }
 
+class Vehicles{
+
+}
+
 class SpawnPoint{
     + SpawnPoint()
     + create_vehicle(ArrayList<Car>, int): void

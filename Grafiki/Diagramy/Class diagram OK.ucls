@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="JPEG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="Environment.Board" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/Environment/Board.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-35" y="373"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="Environment.Buttons" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/Environment/Buttons.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="701" y="199"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="MainPackage.Main" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/MainPackage/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="295" y="793"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="MainPackage.Start" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/MainPackage/Start.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="293" y="489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="Vehicles.Car" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/Vehicles/Car.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="165" y="36"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="Vehicles.Driver" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/Vehicles/Driver.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="802" y="-99"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="Vehicles.Motor" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/Vehicles/Motor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="392" y="46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="Vehicles.SpawnPoint" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/Vehicles/SpawnPoint.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="306" y="211"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="Vehicles.Vehicle" project="Symulacja_PO GOTOWA" 
+    file="/Symulacja_PO GOTOWA/src/Vehicles/Vehicle.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="272" y="-303"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="10">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="11">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <generalization id="12">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="13">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="17">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="18" name="cars"/>      
+      <multiplicity id="19" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="20">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="21">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="22" name="driver"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="24">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="25">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="26" name="motors"/>      
+      <multiplicity id="27" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="28">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

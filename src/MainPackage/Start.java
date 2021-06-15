@@ -31,10 +31,6 @@ public class Start extends JPanel implements ActionListener {
     JButton buttonMedium = new JButton("Medium");
     JButton buttonFast = new JButton("Fast");
 
-//    JPanel panel = new JPanel();
-
-//    String carAmountInput = "";
-
     public Start() {
 
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -54,12 +50,6 @@ public class Start extends JPanel implements ActionListener {
 
     public void paint(Graphics window) {
 
-//        frame.setBounds(100, 100, 1000, 1000);
-//        panel.setBackground(new Color(210, 217, 228));
-//        panel.setBorder(null);
-//        panel.setVisible(true);
-//        frame.add(panel);
-
         paintButtons(window);
         paintSimulation(window);
 
@@ -77,7 +67,6 @@ public class Start extends JPanel implements ActionListener {
 
         Board.paintRoad(g);
         Board.paintIntersection(g);
-//        Board.paintLights(g, time);
 
         g.setColor(Color.black);
         g.drawLine(FRAME_WIDTH - FRAME_WIDTH / 3, 0, FRAME_WIDTH - FRAME_WIDTH / 3, FRAME_HEIGHT);
@@ -85,12 +74,10 @@ public class Start extends JPanel implements ActionListener {
         g.fillRect(FRAME_WIDTH - FRAME_WIDTH / 3, 0, FRAME_WIDTH / 3, FRAME_HEIGHT);
         g.setColor(Color.black);
         g.drawString("Cars: " + "   Time: " + time, FRAME_WIDTH - FRAME_WIDTH / 3 + 30, 30);
-//        window.drawString("Collisions: ", FRAME_WIDTH - FRAME_WIDTH / 3 + 30, 45);
         g.drawString(String.format("Car max speed: %.2f",Math.abs(max_speed)), 950, 70);
     }
 
     public void paintButtons(Graphics h){
-//        panel.paint(h);
 
         buttonSlow.setBounds(820,130,90,25);
         this.add(buttonSlow);
@@ -143,15 +130,5 @@ public class Start extends JPanel implements ActionListener {
                 motors.get(i).setMaxSpeed(6);
             }
         }
-
-//        if(e.getSource()== carAmount){
-//            carAmountInput = carAmount.getText();
-//            int carInputNumber=Integer.parseInt(carAmountInput);
-////            for(int i=0;i<carInputNumber;i++){
-////                double[] start_point = {290,790};
-////                cars.add(new Car(start_point,Math.random()*4+3,(90)));
-////            }
-//        }
     }
-
 }
